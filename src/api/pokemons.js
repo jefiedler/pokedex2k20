@@ -31,7 +31,10 @@ export async function fetchPokemon(pokemonName) {
   const pokemon = {
       name: result.name, 
       id: result.id,
-      imgSrc: result.sprites.front_default,
+      imgSrc: `https://img.pokemondb.net/sprites/black-white/anim/normal/${result.name}.gif`,
+      hp: result.stats[0]?.base_stat,
+      attack: result.stats[1]?.base_stat,
+      defense: result.stats[2]?.base_stat,
   };
   return pokemon;
 }
