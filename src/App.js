@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch,
   Redirect} from "react-router-dom";
 import Pokemons from "./pages/Pokemons";
 import Items from "./pages/Items";
+import Pokemon from "./pages/Pokemon";
 
 function App() {
 
@@ -14,12 +15,15 @@ function App() {
     <Router>
     <div className="app">
       <Switch>
-      <Route path="/pokemons">
-      <Pokemons />
-      </Route>
-      <Route path="/items">
-        <Items />
-      </Route>
+        <Route path="/pokemons/:pokemonName">
+          <Pokemon></Pokemon>
+        </Route>
+        <Route path="/pokemons">
+          <Pokemons />
+        </Route>
+        <Route path="/items">
+          <Items />
+        </Route>
           <Route path="/">
             <Redirect to="/pokemons" />
           </Route>
